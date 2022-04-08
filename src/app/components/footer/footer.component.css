@@ -1,0 +1,56 @@
+footer {
+  width: vw 100%;
+  position: flex;
+  background: rgba(3, 37, 65);
+  width: 100%;
+  height: 50%;
+  margin: 0;
+}
+
+nav {
+  background: rgba(3, 37, 65);
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  color: #01b4e4;
+  font-weight: bold;
+  background: #ffffff;
+  padding-bottom: 4px;
+  padding-top: 6px;
+  padding-left: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: linear 0.1s;
+  text-align: center;
+}
+
+#testediv {
+  padding: 60px 0px 0px 0px;
+  flex-flow: column;
+}
+
+#testediv1 {
+  padding: 60px 0px 0px 0px;
+}
+
+h3 {
+  font-weight: 600;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+#testediv1 li a {
+  display: block;
+  line-height: 1.6em;
+  text-align: left;
+  margin-right: 5em;
+}
+
+#testediv li a {
+  display: block;
+  line-height: 1.6em;
+  text-align: left;
+  margin-right: 2em;
+}

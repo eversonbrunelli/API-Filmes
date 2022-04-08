@@ -1,0 +1,36 @@
+<head>
+  <!-- Compiled and minified CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<main>
+  <section class="container">
+    <img
+      loading="lazy"
+      class="poster"
+      alt="HTML5"
+      src="{{ patch }}{{ lista?.poster_path }}"
+    />
+
+    <section class="content">
+      <header>
+        <h1>{{ lista.title }}</h1>
+        <h2>
+          {{ lista.release_date | date: "shortDate" }} - Avaliação dos usuários:
+          {{ lista.vote_average * 10 }}%
+        </h2>
+        <div *ngFor="let item of lista.genres">
+          <div class="generos">{{ item.name }}</div>
+        </div>
+      </header>
+      <h3>Sinopse</h3>
+      <p>{{ lista.overview }}</p>
+    </section>
+  </section>
+</main>

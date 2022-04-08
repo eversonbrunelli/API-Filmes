@@ -1,0 +1,90 @@
+<!-- Compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+/>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<main>
+  <h1>Filmes Populares</h1>
+
+  <article>
+    <aside>
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title> Ordenar </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title> Gêneros </mat-panel-title>
+          </mat-expansion-panel-header>
+          <li><a href="generos/16"> Animação</a></li>
+          <li><a href="generos/12"> Aventura</a></li>
+          <li><a href="generos/28"> Ação</a></li>
+          <li><a href="generos/10770"> Cinema TV</a></li>
+          <li><a href="generos/35"> Comédia</a></li>
+          <li><a href="generos/80"> Crime</a></li>
+          <li><a href="generos/99"> Documentário</a></li>
+          <li><a href="generos/18"> Drama</a></li>
+          <li><a href="generos/10751"> Família</a></li>
+          <li><a href="generos/14"> Fantasia</a></li>
+          <li><a href="generos/37"> Faroeste</a></li>
+          <li><a href="generos/878"> Ficção Científica</a></li>
+          <li><a href="generos/10752"> Guerra</a></li>
+          <li><a href="generos/36"> História</a></li>
+          <li><a href="generos/9648"> Mistério</a></li>
+          <li><a href="generos/10402"> Música</a></li>
+          <li><a href="generos/10749"> Romance</a></li>
+          <li><a href="generos/27"> Terror</a></li>
+          <li><a href="generos/53"> Thriller</a></li>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title> Onde assistir </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </aside>
+
+    <section class="container">
+      <div *ngFor="let item of lista">
+        <div class="card">
+          <div class="card-image">
+            <a routerLink="/detalhes/{{ item.id }}">
+              <img
+                loading="lazy"
+                class="poster"
+                src="{{ patch }}{{ item?.poster_path }}"
+              />
+            </a>
+          </div>
+          <a routerLink="/detalhes/{{ item.id }}">
+            <h2>{{ item.title }}</h2>
+          </a>
+          <p>
+            {{ item.release_date | date: "shortDate" }}
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
